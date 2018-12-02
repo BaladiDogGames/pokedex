@@ -27,11 +27,11 @@ $result = mysqli_query($con,"SELECT * FROM pokemon");
 if (isset($_POST['action'])) {
 	
 	$_SESSION['selected_id'] = $_POST['submit'];
-	$result2 = mysqli_query($con,"SELECT * FROM pokemon WHERE id=" . $_SESSION['selected_id']);
+	$result2 = mysqli_query($con,"SELECT * FROM pokemon WHERE pokemon_id=" . $_SESSION['selected_id']);
 	$row = mysqli_fetch_array($result2);
 	echo '<div id="selected_pokemon">Selected Pokemon: ' . $row["name"] . ' which is # ' 
 		. $_SESSION['selected_id'] . '<br>'
-		. '<a href="./PokemonDetails.php">Click here to learn more! </a> </div>';	
+		. '<a href="./PokemonDetails.php">Click Here to view ' . $row["name"] . '\'s Details >></a> </div>';	
 }
 
 
@@ -51,7 +51,7 @@ echo '<input type="hidden" name="action" value="submit" />';
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";
-echo "<td>" . '<input id=5 type="submit" name="submit" value=' . $row["id"] . ' style="display:table-cell; width:100%">' . "</td>" ;
+echo "<td>" . '<input type="submit" name="submit" value=' . $row["pokemon_id"] . ' style="display:table-cell; width:100%">' . "</td>" ;
 echo "<td>" . $row['name'] . "</td>";
 echo "</tr>";
 }

@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-<h1>Pokemon Details</h1>
 
 <?php
 session_start(); 
@@ -23,19 +22,24 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
 echo '<a href="./PokedexHome.php"> << Return to the Pokedex</a>';
 
-//On page 2
+//Load session variable
 $selected_id = $_SESSION['selected_id'];
 
-
 // Queries pokemon table
-$result = mysqli_query($con,"SELECT * FROM pokemon WHERE id=$selected_id" );
+$result = mysqli_query($con,"SELECT * FROM pokemon WHERE pokemon_id=$selected_id" );
+
+//Display pokemon name
+$single_result = mysqli_query($con,"SELECT * FROM pokemon WHERE pokemon_id=$selected_id") or die(mysql_error());
+$pokemon = mysqli_fetch_assoc($single_result);
+echo '<h1>' . $pokemon["name"] . '</h1>';
+
+
 
 //Sets up html table
 echo "<table border='1' id='table_home'>
 <tr>
-<th>ID</th>
-<th>Name</th>
-<th>test2</th>
+<th><img src='/images/whos_that_pikachu.jpeg'></th>
+<th>Pokemon Data</th>
 </tr>";
 
 //Sets up form
