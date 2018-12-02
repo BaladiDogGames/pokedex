@@ -1,0 +1,24 @@
+h1 {
+	text-align:center;
+}
+
+table#table_home {
+	width:70%; 
+	margin-left:15%; 
+	margin-right:15%;
+	text-align:center;
+}
+
+div#selected_pokemon {
+	width:70%; 
+	margin-left:15%; 
+	margin-right:15%;
+    text-align:center;
+}
+
+.center {
+	width:70%; 
+	margin-left:15%; 
+	margin-right:15%;
+    text-align:center;
+}
