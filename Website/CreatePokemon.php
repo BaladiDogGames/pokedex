@@ -16,6 +16,9 @@
 </p>
 </div>
 
+
+<h1> Create A Pokemon! </h1>
+
 <?php
 session_start(); 
 
@@ -100,7 +103,7 @@ echo '<hr />
 <p>Speed: <input type="text" name="speed" /></p>
 </td>
 
-</table>
+</table> <br>
 
 <div id="selected_pokemon">
 <input type="submit" name="create_pokemon" value="Create Pokemon" /></br></br>

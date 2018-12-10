@@ -16,9 +16,8 @@
 </p>
 </div>
 
-<br>
 <h1>Release a Pokemon</h1>
-
+<hr />
 <?php
 session_start(); 
 

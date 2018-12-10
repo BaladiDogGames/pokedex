@@ -44,11 +44,11 @@ $pokemon = mysqli_fetch_assoc($single_result);
 echo '<h1>' . $pokemon["name"] . '</h1>';
 
 //Sets up html table
-echo "<table border='1' id='table_home'>
+echo "<table border='1' id='table_details'>
 <tr>
-<td><img src='./images/whos_that_pikachu.jpeg' height='175' width='175'></td>
+<td class='customTD'><img src='./images/whos_that_pikachu.jpeg' height='175' width='175'></td>
 
-<td>
+<td class='customTD2'>
 <h3>POKEMON DATA</h3>
 
 <table id='table_home'>
@@ -105,6 +105,7 @@ echo "
 <td> Speed: </td> <td>" . $pokemon['speed'] . "</td>
 </tr>
 </table>
+<br>
 </td>
 </tr>
 </table>";

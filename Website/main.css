@@ -1,5 +1,6 @@
 h1 {
 	text-align:center;
+	color:red;
 }
 
 table#table_home {
@@ -7,6 +8,29 @@ table#table_home {
 	margin-left:15%; 
 	margin-right:15%;
 	text-align:center;
+  	border: 1px solid black;
+	background-color:#FF6543;
+}
+table#table_details {
+	width:70%; 
+	margin-left:15%; 
+	margin-right:15%;
+	text-align:center;
+  	border: 1px solid black;
+	background-color:#FF6543;
+}
+
+.customTD {
+	width:30%;
+}
+
+.customTD2 {
+	width:70%;
+}
+
+
+th {
+	background-color:lightgrey;
 }
 
 div#selected_pokemon {
@@ -22,3 +46,15 @@ div#selected_pokemon {
 	margin-right:15%;
     text-align:center;
 }
+
+body {
+	background-color:lightblue;
+	color:;
+	font-style:bold;
+}
+
+input[type=submit] {
+  background-color: yellow;
+}
+
+
