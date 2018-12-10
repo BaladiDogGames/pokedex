@@ -24,7 +24,7 @@
 session_start(); 
 
 // Sets up database connection
-$con = mysqli_connect("localhost", "bivins", "password", "pokedex");
+$con = mysqli_connect("localhost", "admin", "password", "pokedex");
 
 // Checks connection
 if (mysqli_connect_errno())
