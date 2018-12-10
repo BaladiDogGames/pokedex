@@ -1,24 +1,24 @@
 USE pokedex;
 
-LOAD DATA LOCAL INFILE '/path/to/data/Pokemon.csv' INTO TABLE pokemon 
+LOAD DATA INFILE 'C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\Pokemon.csv' INTO TABLE pokemon 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'  
 LINES TERMINATED BY '\n' 
 IGNORE 1 ROWS; 
 
-LOAD DATA LOCAL INFILE '/path/to/data/PokemonStats.csv' INTO TABLE pokemonStats
+LOAD DATA LOCAL INFILE 'C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\PokemonStats.csv' INTO TABLE pokemonStats
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; 
 
-LOAD DATA LOCAL INFILE '/path/to/data/PokemonTypes.csv' INTO TABLE pokemonTypes
+LOAD DATA LOCAL INFILE 'C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\PokemonTypes.csv' INTO TABLE pokemonTypes
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"' 
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS; 
 
-LOAD DATA LOCAL INFILE '/path/to/data/PokemonDescriptions.csv' INTO TABLE pokemonDescriptions
+LOAD DATA LOCAL INFILE 'C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\PokemonDescriptions.csv' INTO TABLE pokemonDescriptions
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"' 
 LINES TERMINATED BY '\n'
