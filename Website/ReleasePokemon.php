@@ -9,16 +9,15 @@
 <body>
 <div id="wrapper">
 <p style="text-align:left;">
+<a href="./PokedexHome.php"> << Return to the Pokedex</a>
 <span style="float:right;">
 <a href="./CreatePokemon.php"> Create a new Pokemon</a> <br>
-<a href="./ReleasePokemon.php"> Release a Pokemon</a> 
 </span>
 </p>
 </div>
 
 <br>
-
-<h1>POKEDEX</h1>
+<h1>Release a Pokemon</h1>
 
 <?php
 session_start(); 
@@ -35,18 +34,17 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
 // Queries pokemon table
 $result = mysqli_query($con,"SELECT * FROM pokemon");
 
-
-// If Pokemon Selected via Button, get selected pokemon data
-if (isset($_POST['action'])) {	
+// If a Pokemon button is clicked
+if (isset($_POST['action'])) {
+	
 	$_SESSION['selected_id'] = $_POST['submit'];
 	$result2 = mysqli_query($con,"SELECT * FROM pokemon WHERE pokemon_id=" . $_SESSION['selected_id']);
 	$row = mysqli_fetch_array($result2);
 	echo '<div id="selected_pokemon">You have selected ' . $row["name"] . ' (# ' 
 		. $_SESSION['selected_id'] . ') <br>'
-		. '<a href="./PokemonDetails.php">Click Here to learn more about ' 
-		. $row["name"] . ' >></a> </div> <br>';	
+		. 'WARNING: Releasing a Pokemon will permanently remove it from your Pokedex. <br>'
+		. '<a href="./ReleasePokemonMessage.php">Click Here to permanently release ' . $row["name"] . ' (# ' . $_SESSION['selected_id'] . ') into the wild. >></a> </div> <br>';	
 }
-
 
 //Sets up html table
 echo "<table border='1' id='table_home'>
@@ -56,10 +54,11 @@ echo "<table border='1' id='table_home'>
 </tr>";
 
 //Sets up form
+//PokemonDetails.php
 echo "<form method='post' action=''>";
 echo '<input type="hidden" name="action" value="submit" />';
 
-//Loops through table rows and populates with mysql data
+//Loops through table rows
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";
@@ -67,7 +66,8 @@ echo "<td>" . '<input type="submit" name="submit" value=' . $row["pokemon_id"] .
 echo "<td>" . $row['name'] . "</td>";
 echo "</tr>";
 }
-  
+ 
+// Ends form & table 
 echo "</form>";
 echo "</table>";
 

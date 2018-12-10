@@ -42,30 +42,3 @@ CREATE TABLE IF NOT EXISTS pokemonDescriptions (
 	ON DELETE CASCADE
 );
 
-
-LOAD DATA LOCAL INFILE '/var/www/html/CWB208/StudentFiles/PokedexProject/Website/data/Pokemon.csv' INTO TABLE pokemon 
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"'  
-LINES TERMINATED BY '\n' 
-IGNORE 1 ROWS; 
-
-LOAD DATA LOCAL INFILE '/var/www/html/CWB208/StudentFiles/PokedexProject/Website/data/PokemonStats.csv' INTO TABLE pokemonStats
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"' 
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; 
-
-LOAD DATA LOCAL INFILE '/var/www/html/CWB208/StudentFiles/PokedexProject/Website/data/PokemonTypes.csv' INTO TABLE pokemonTypes
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"' 
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; 
-
-LOAD DATA LOCAL INFILE '/var/www/html/CWB208/StudentFiles/PokedexProject/Website/data/PokemonDescriptions.csv' INTO TABLE pokemonDescriptions
-FIELDS TERMINATED BY ',' 
-ENCLOSED BY '"' 
-LINES TERMINATED BY '\n'
-IGNORE 1 ROWS; 
-
-
-
